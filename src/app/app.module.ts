@@ -26,7 +26,8 @@ import { ReportOrderModule } from './report-order/report-order.module';
     CoreModule,
     HomeModule,
     NgxSpinnerModule,
-    ReportOrderModule
+    ReportOrderModule,
+    
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS , useClass:ErrorInterceptor , multi:true},
