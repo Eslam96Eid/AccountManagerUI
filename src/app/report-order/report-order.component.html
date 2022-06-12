@@ -1,0 +1,110 @@
+<mat-card class="example-card">
+
+    <ng-template #table>
+        <div class="example-container mat-elevation-z8">
+
+            <mat-table class="table-striped" [dataSource]="dataSource" #table matSort (matSortChange)="sortData($event)"
+                matSortActive="customerName" matSortDirection="asc" matSortDisableClear>
+
+
+                <ng-container matColumnDef="id">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>ID</mat-header-cell>
+                    <mat-cell *matCellDef="let element" data-label="id"> {{element.id}} </mat-cell>
+                </ng-container>
+
+
+                <ng-container matColumnDef="customerName">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header><b>Customer Name</b> </mat-header-cell>
+                    <mat-cell *matCellDef="let element" data-label="customerName"> {{element.customerName}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="accountNumber">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header><b>AccountNumber</b></mat-header-cell>
+                    <mat-cell *matCellDef="let element" data-label="accountNumber"> {{element.accountNumber}}
+                    </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="branch">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header><b>branch</b> </mat-header-cell>
+                    <mat-cell *matCellDef="let element" data-label="branch"> {{element.branch}}
+                    </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="ticketNumber">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header><b>ticketNumber</b> </mat-header-cell>
+                    <mat-cell *matCellDef="let element" data-label="ticketNumber"> {{element.ticketNumber}}
+                    </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="reportType">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header><b>reportType</b> </mat-header-cell>
+                    <mat-cell *matCellDef="let element" data-label="reportType"> {{element.reportType}}
+                    </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="reportStatus">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header><b>reportStatus</b> </mat-header-cell>
+                    <mat-cell *matCellDef="let element" data-label="reportStatus"> {{element.reportStatus}}
+                    </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="action">
+                    <mat-header-cell mat-header-cell *matHeaderCellDef> Action</mat-header-cell>
+                    <mat-cell *matCellDef="let row" data-label="action">
+
+
+                        <ng-container *ngIf="!editdisabled">
+
+                            <button mat-button class="text-success font-weight-bolder">
+                                Edit
+                            </button>
+                            <span class="mx-2">|</span>
+                            <button mat-button class="font-weight-bolder" color="warn">
+                                Delete
+
+                            </button>
+                        </ng-container>
+                        <ng-container>
+                            <button class="btn-success btn-sm mr-1" [disabled]="isDisabled">
+                                Update
+                            </button>
+
+                            <button class="btn-danger btn-sm">
+                                Cancel
+                            </button>
+                        </ng-container>
+
+                    </mat-cell>
+
+
+
+                </ng-container>
+
+
+
+
+                <ng-container matColumnDef="noData">
+                    <mat-footer-cell *matFooterCellDef colspan="6">
+                        No Data ...
+                    </mat-footer-cell>
+
+                </ng-container>
+
+
+
+                <mat-footer-row *matFooterRowDef="['noData']"
+                    [ngClass]="{'hide':!(dataSource.data.length==0 && dataSource !=null)}"></mat-footer-row>
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+
+            </mat-table>
+            <!-- end test -->
+        </div>
+    </ng-template>
+
+
+    <mat-paginator [pageSizeOptions]="[50, 25, 100]" [pageSize]="25" (page)="pageChanged($event)" showFirstLastButtons>
+    </mat-paginator>
+
+</mat-card>
