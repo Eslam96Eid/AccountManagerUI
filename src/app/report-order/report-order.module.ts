@@ -7,6 +7,7 @@ import { NotificationMsgService } from './notification-msg.service';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCardModule } from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -17,10 +18,11 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatPaginatorModule,
     SharedModule,
     MatCardModule,
+    MatTableModule,
     MatSnackBarModule
 
   ],
   providers: [ReportOrderService,NotificationMsgService],
-  exports:[MatPaginatorModule,ReportOrderComponent,MatSnackBarModule]
+  exports:[   MatTableModule,MatPaginatorModule,ReportOrderComponent,MatSnackBarModule]
 })
 export class ReportOrderModule { }

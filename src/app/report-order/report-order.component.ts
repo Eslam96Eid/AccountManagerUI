@@ -14,7 +14,7 @@ import { NotificationMsgService } from './notification-msg.service';
 export class ReportOrderComponent implements OnInit {
   @ViewChild(MatSort) sort?: MatSort;
   @ViewChild(MatPaginator) paginator?: MatPaginator;
-  displayedColumns: string[] = ['id', 'customerName', 'accountNumber' , 'branch' ,'ticketNumber','reportType' ,'reportStatus'];
+  displayedColumns: string[] = ['id', 'orderedBy', 'customerName', 'accountNumber' , 'branch' ,'ticketNumber','reportType', 'periodFrom' , 'periodTo' ,'reportStatus','sendTo','ccTo', 'createdAt' , 'reportClass','report','customReport'];
   dataSource = new MatTableDataSource<any>();
 
   sortColumnDef: string = "Id";
