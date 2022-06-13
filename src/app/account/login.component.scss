@@ -1,13 +1,11 @@
 mat-card::after {
     content: " ";
-      width: 0; 
-      height: 0; 
-      border-left: 50px solid transparent;
-      border-right: 50px solid transparent;
-      border-bottom: 50px solid #f9f9f9;
+      width: 80px; 
+      height: 143px; 
       position: absolute;
-      right: 20px;
-      top:-45px;
+   left: 40%;
+      top:-85px;
+      background-image: url('../../assets/images/icon.png');
     
     }
   
@@ -15,7 +13,7 @@ mat-card::after {
     .content-body{
       min-height:100vh;
       padding:55px 1rem 30px 1rem;
-    //   background-image:url("../../../../assets/image/login_bg.jpg") ;
+      background-image:url("../../assets/images/account-manager.jpg") ;
       background-attachment: fixed;
       background-size: 100% 100%;
       background-repeat: no-repeat;
@@ -44,7 +42,7 @@ mat-card::after {
     h2{
       text-align: left;
         margin-left: 10%;
-        color: #e0dfdc;
+        color: #fff;
        
        
        
@@ -55,7 +53,7 @@ mat-card::after {
       max-width: 450px;
       margin: 2em auto;
       text-align: center;
-      height: 440px;
+      height: 480px;
       /* border-radius:30px 0 30px 0 !important; */
       padding-top: 0px !important;
       color: #f9f9f9!important;
@@ -96,9 +94,7 @@ mat-card::after {
       margin-bottom:20px
     }
     .login{
-    //   background-image: url("../../../../assets/image/menu_bg.png");
-      background-repeat: repeat-x;
-      background-size: contain;
+      background-color: #2c2d2f;
       color: #ffffff;
       width: 80%;
       border-radius: 5px;
@@ -117,7 +113,7 @@ mat-card::after {
     input:-webkit-autofill,
     input:-webkit-autofill:hover, 
     input:-webkit-autofill:focus
-     { -webkit-text-fill-color: #f9f9f9;
+     { -webkit-text-fill-color: var(--main-color);
       -webkit-box-shadow: 0 0 0px 1000px transparent inset;
       transition: background-color 5000s ease-in-out 0s;
     }

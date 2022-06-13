@@ -13,6 +13,7 @@ import {CdkStepperModule} from '@angular/cdk/stepper';
 import { StepperComponent } from './components/stepper/stepper.component';
 import { RouterModule } from '@angular/router';
 
+
 @NgModule({
   declarations: [PagingHeaderComponent, PagerComponent, OrderTotalsComponent, TextInputComponent, StepperComponent, BasketSummaryComponent],
   imports: [

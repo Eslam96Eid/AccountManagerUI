@@ -1,29 +1,22 @@
-<!-- <div class="d-flex justify-content-center mt-5">
-    <div class="col-3">
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-            <div class="text-center mb-4">
-                <h1 class="h3 mb-3 font-weight-normal">Login</h1>
-            </div>
+<!-- loader for loading login page -->
+<ngx-spinner>
+    <h3>Loading</h3>
+</ngx-spinner>
 
-            <app-text-input formControlName="userName" [label]="'User Name'"></app-text-input>
-            <app-text-input formControlName="password" [label]="'Password'" [type]="'password'"></app-text-input>
-
-            <button [disabled]="loginForm.invalid" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        </form>
-    </div>
-</div> -->
 
 <div class="content-body">
     <mat-card>
         <mat-card-content>
 
             <div class="pt-5 pb-4">
-                <img src="../../../../assets/image/qualitylogo.png">
+              
+                <img src="../../assets/images/slogan.png"  class="mt-2" height="60px">
+                
             </div>
          
              <h2>
-                 <img src="../../../../assets/image/loginiconborder (1).png" height="30" width="30">
-                Join Now!!
+              
+             Login
              </h2>
                 
             <form  name="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
@@ -62,7 +55,7 @@
                     </mat-form-field> 
   
                 <!-- </div> -->
-                <button mat-flat-button class="login"  [disabled]="loginForm.invalid" type="submit">Login</button>
+                <button mat-flat-button class="login"   type="submit">Login</button>
             </form>
        
         </mat-card-content>

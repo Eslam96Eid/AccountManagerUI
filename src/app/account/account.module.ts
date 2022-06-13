@@ -11,6 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 
@@ -22,6 +23,7 @@ import {MatIconModule} from '@angular/material/icon';
   imports: [
     CommonModule,
     AccountRoutingModule,
+    NgxSpinnerModule,
     SharedModule,
     FormsModule,
     ReactiveFormsModule,

@@ -9,21 +9,21 @@ import { AccountService } from './account/account.service';
 })
 export class AppComponent implements OnInit {
   
-  title = 'SkiNet';
+  // title = 'SkiNet';
 
   constructor( private accountService: AccountService) { }
 
   ngOnInit(): void {
-    this.loadCurrentUser();
+    // this.loadCurrentUser();
   }
 
-  loadCurrentUser() {
-    const token = localStorage.getItem('token');
-    this.accountService.loadCurrentUser(token).subscribe(() => {
-      console.log('loaded user');
-    }, error => {
-      console.log(error);
-    })
-  }
+  // loadCurrentUser() {
+  //   const token = localStorage.getItem('token');
+  //   this.accountService.loadCurrentUser(token).subscribe(() => {
+  //     console.log('loaded user');
+  //   }, error => {
+  //     console.log(error);
+  //   })
+  // }
 
 }

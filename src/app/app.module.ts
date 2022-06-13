@@ -12,6 +12,9 @@ import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { ReportOrderComponent } from './report-order/report-order.component';
 import { ReportOrderModule } from './report-order/report-order.module';
+import { LayoutModule } from '@angular/cdk/layout';
+import { AccountModule } from './account/account.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -20,13 +23,17 @@ import { ReportOrderModule } from './report-order/report-order.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
     CoreModule,
     HomeModule,
     NgxSpinnerModule,
     ReportOrderModule,
+    LayoutModule,
+    AccountModule,
+   RouterModule
+  
     
   ],
   providers: [
