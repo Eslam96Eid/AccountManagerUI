@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://172.29.29.8:6080'
+  apiUrl: 'http://172.29.29.8:6080/api/'
+  
 };
 
 /*
