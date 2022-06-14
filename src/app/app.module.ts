@@ -28,7 +28,7 @@ import { LayoutModule } from './layout/layout.module';
     BrowserAnimationsModule,
     HttpClientModule,
     // CoreModule,
-    HomeModule,
+    // HomeModule,
     NgxSpinnerModule,
     ReportOrderModule,
     LayoutModule,

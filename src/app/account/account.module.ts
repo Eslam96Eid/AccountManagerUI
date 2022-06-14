@@ -23,17 +23,11 @@ import { MaterialModule } from '../shared/modules/material/material.module';
   ],
   imports: [
     CommonModule,
-    AccountRoutingModule,
+    // AccountRoutingModule,
     NgxSpinnerModule,
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-  //   MatCardModule,
-  //   MatTableModule,
-  //   MatButtonModule,
-  //  MatFormFieldModule,
-  //  MatInputModule,
-  //  MatIconModule,
    MaterialModule
    
   

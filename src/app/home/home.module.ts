@@ -6,14 +6,14 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 @NgModule({
   declarations: [
-    HomeComponent
+    // HomeComponent
   ],
   imports: [
     CommonModule,
     CarouselModule.forRoot()
   ],
   exports:[
-    HomeComponent,
+    // HomeComponent,
     CarouselModule]
 })
 export class HomeModule { }
