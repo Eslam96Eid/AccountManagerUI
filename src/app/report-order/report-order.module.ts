@@ -8,6 +8,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCardModule } from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
+import { MaterialModule } from '../shared/modules/material/material.module';
 
 @NgModule({
   declarations: [
@@ -15,11 +16,12 @@ import { MatTableModule } from '@angular/material/table';
   ],
   imports: [
     CommonModule,
-    MatPaginatorModule,
-    SharedModule,
-    MatCardModule,
-    MatTableModule,
-    MatSnackBarModule
+    // MatPaginatorModule,
+     SharedModule,
+    // MatCardModule,
+    // MatTableModule,
+    // MatSnackBarModule
+    MaterialModule
 
   ],
   providers: [ReportOrderService,NotificationMsgService],

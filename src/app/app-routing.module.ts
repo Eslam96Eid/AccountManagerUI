@@ -7,12 +7,15 @@ import { TestErrorComponent } from './core/test-error/test-error.component';
 // import { HomeComponent } from './home/home/home.component';
 import { ReportOrderComponent } from './report-order/report-order.component';
 import { LayoutComponent } from './layout/layout.component';
+import { HomeComponent } from './home/home/home.component';
 
 const routes: Routes = [
   { path:'account', loadChildren: () => import('./account/account.module').then(mod => mod.AccountModule),
     data: { breadcrumb: {skip: true} }
   },
-  { path: 'home', component: LayoutComponent, data: { breadcrumb: 'Home' } },
+  { path: '', component: LayoutComponent, data: { breadcrumb: 'Home' } },
+  
+  // { path: '', component: HomeComponent, data: { breadcrumb: 'Home' } },
   { path: 'test-error', component: TestErrorComponent, data: { breadcrumb: 'Test Errors' } },
   { path: 'server-error', component: ServerErrorComponent, data: { breadcrumb: 'Server Error' } },
   { path: 'not-found', component: NotFoundComponent, data: { breadcrumb: 'Not found' } },

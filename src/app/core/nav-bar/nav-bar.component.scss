@@ -12,7 +12,7 @@
 }
 a{
     text-decoration: none;
-    color:#343a40;
+    color:var(--main-color);
 
     &.active{
         color:orange;
@@ -24,4 +24,10 @@ a{
     &.focus{
         outline: none;
     }
+}
+.user{
+    color:var(--secondary-color);
+}
+.separator{
+    color: var(--secondary-color);
 }

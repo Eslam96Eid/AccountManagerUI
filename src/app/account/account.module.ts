@@ -12,6 +12,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { MaterialModule } from '../shared/modules/material/material.module';
 
 
 
@@ -27,12 +28,13 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    MatCardModule,
-    MatTableModule,
-    MatButtonModule,
-   MatFormFieldModule,
-   MatInputModule,
-   MatIconModule
+  //   MatCardModule,
+  //   MatTableModule,
+  //   MatButtonModule,
+  //  MatFormFieldModule,
+  //  MatInputModule,
+  //  MatIconModule,
+   MaterialModule
    
   
   ]
