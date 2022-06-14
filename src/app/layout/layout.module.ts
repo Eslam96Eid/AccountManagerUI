@@ -8,19 +8,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReportOrderModule } from 'src/app/report-order/report-order.module';
 import { LayoutComponent } from './layout.component';
-import { SectionHeaderComponent } from 'src/app/core/section-header/section-header.component';
 import { SharedModule } from '../shared/shared.module';
-import { NavBarComponent } from 'src/app/core/nav-bar/nav-bar.component';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../shared/modules/material/material.module';
-import { HomeComponent } from '../home/home/home.component';
+import { ReportOrderComponent } from '../report-order/report-order.component';
 
 
 
 @NgModule({
   declarations: [
-    LayoutComponent,
-    HomeComponent
+    LayoutComponent
     
    
  
@@ -34,13 +31,13 @@ import { HomeComponent } from '../home/home/home.component';
     BrowserAnimationsModule,
     HttpClientModule,
      CoreModule,
-    // HomeModule,
     ReportOrderModule,
     SharedModule,
     RouterModule,
    ReportOrderModule,
    MaterialModule
     
-  ]
+  ],
+  exports:[ReportOrderModule,ReportOrderComponent]
 })
 export class LayoutModule { }

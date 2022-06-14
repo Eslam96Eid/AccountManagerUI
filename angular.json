@@ -80,10 +80,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "skinet:build",
-            "sslKey":"ssl/server.key",
-            "sslCert": "ssl/server.crt",
-            "ssl": true
+            "browserTarget": "skinet:build"
           },
           "configurations": {
             "production": {
