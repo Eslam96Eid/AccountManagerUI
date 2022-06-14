@@ -13,12 +13,14 @@ import { SharedModule } from '../shared/shared.module';
 import { NavBarComponent } from 'src/app/core/nav-bar/nav-bar.component';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../shared/modules/material/material.module';
+import { HomeComponent } from '../home/home/home.component';
 
 
 
 @NgModule({
   declarations: [
     LayoutComponent,
+    HomeComponent
     
    
  
@@ -32,7 +34,7 @@ import { MaterialModule } from '../shared/modules/material/material.module';
     BrowserAnimationsModule,
     HttpClientModule,
      CoreModule,
-    HomeModule,
+    // HomeModule,
     ReportOrderModule,
     SharedModule,
     RouterModule,
