@@ -9,6 +9,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { SectionHeaderComponent } from './section-header/section-header.component';
 import {BreadcrumbModule} from 'xng-breadcrumb';
 import { SharedModule } from '../shared/shared.module';
+import { MaterialModule } from '../shared/modules/material/material.module';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     RouterModule,
     BreadcrumbModule,
+    MaterialModule,
     SharedModule,
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',
