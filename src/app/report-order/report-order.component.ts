@@ -6,12 +6,17 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { NotificationMsgService } from './notification-msg.service';
+import { MatDialogConfig } from '@angular/material/dialog';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { EditReportComponent } from '../Forms/edit-report/edit-report.component';
 @Component({
   selector: 'app-report-order',
   templateUrl: './report-order.component.html',
   styleUrls: ['./report-order.component.scss']
 })
 export class ReportOrderComponent implements OnInit {
+
+  searchKey:string ='' ;
   @ViewChild(MatSort) sort?: MatSort;
   @ViewChild(MatPaginator) paginator?: MatPaginator;
   displayedColumns: string[] = ['id', 'orderedBy', 'customerName', 'accountNumber' , 'branch' ,'ticketNumber','reportType', 'periodFrom' , 'periodTo' ,'reportStatus','sendTo','ccTo', 'createdAt' , 'reportClass','report','customReport'];
@@ -28,7 +33,7 @@ export class ReportOrderComponent implements OnInit {
     { name: 'Price: Low to high', value: 'priceAsc' },
     { name: 'Price: High to low', value: 'priceDesc' },
   ]
-  constructor(private reportOrderService: ReportOrderService, public notificationService: NotificationMsgService) {
+  constructor(private reportOrderService: ReportOrderService, public notificationService: NotificationMsgService, private _bottomSheet: MatBottomSheet ) {
     this.shopParams = this.reportOrderService.getShopParams();
   }
 
@@ -116,4 +121,24 @@ export class ReportOrderComponent implements OnInit {
   }
 
 
+
+  onSearchClear(){
+    this.searchKey ='';
+    this.applyFilter();
+  }
+  applyFilter(){
+    this.dataSource.filter=this.searchKey.trim().toLowerCase();
+  }
+
+  onCreate(){
+    //this.service.initializeFormGroup();
+    const dialogGonfig = new MatDialogConfig();
+    dialogGonfig.disableClose=true;
+    dialogGonfig.autoFocus= true;
+    dialogGonfig.width="50%";
+    dialogGonfig.panelClass='modals-dialog';
+  
+    this._bottomSheet.open(EditReportComponent);
+  
+  }
 }

@@ -13,6 +13,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { MaterialModule } from '../shared/modules/material/material.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -28,9 +29,10 @@ import { MaterialModule } from '../shared/modules/material/material.module';
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-   MaterialModule
-   
+   MaterialModule,
+   RouterModule
   
-  ]
+  ],
+  exports:[RouterModule]
 })
 export class AccountModule { }

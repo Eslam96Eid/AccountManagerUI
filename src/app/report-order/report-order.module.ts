@@ -12,19 +12,17 @@ import { MaterialModule } from '../shared/modules/material/material.module';
 
 @NgModule({
   declarations: [
-    ReportOrderComponent
+    // ReportOrderComponent
   ],
   imports: [
     CommonModule,
-    // MatPaginatorModule,
+   
      SharedModule,
-    // MatCardModule,
-    // MatTableModule,
-    // MatSnackBarModule
+   
     MaterialModule
 
   ],
   providers: [ReportOrderService,NotificationMsgService],
-  exports:[   MatTableModule,MatPaginatorModule,ReportOrderComponent,MatSnackBarModule]
+  // exports:[   MatTableModule,MatPaginatorModule,ReportOrderComponent,MatSnackBarModule]
 })
 export class ReportOrderModule { }

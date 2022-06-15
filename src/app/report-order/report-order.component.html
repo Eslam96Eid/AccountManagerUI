@@ -1,4 +1,17 @@
+
 <mat-card class="example-card">
+
+    <div class="search-div mt-5" fxLayout="row">
+        <mat-form-field class="search-form-field" floatLabel="never">
+            <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter()"> 
+           <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="onSearchClear()">
+                <mat-icon>close</mat-icon>
+            </button> 
+        </mat-form-field>
+        <button mat-button class="new" (click)="onCreate()">
+            <mat-icon>add</mat-icon>New Report
+        </button>
+    </div>
     <div class="example-container mat-elevation-z8">
 
         <mat-table class="table-striped" [dataSource]="dataSource" #table matSort (matSortChange)="sortData($event)"
@@ -134,7 +147,7 @@
 
 
             <ng-container matColumnDef="noData">
-                <mat-footer-cell *matFooterCellDef colspan="6">
+                <mat-footer-cell *matFooterCellDef colspan="18">
                     No Data ...
                 </mat-footer-cell>
 
@@ -142,8 +155,7 @@
 
 
 
-            <mat-footer-row *matFooterRowDef="['noData']"
-                [ngClass]="{'hide':!(dataSource.data.length==0 && dataSource !=null)}"></mat-footer-row>
+            <mat-footer-row *matFooterRowDef="['noData']"  [ngClass]="{'hide':!(dataSource.data.length==0 && dataSource !=null)}"></mat-footer-row>
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
             <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 

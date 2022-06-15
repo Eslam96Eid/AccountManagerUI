@@ -17,9 +17,11 @@ import { AccountModule } from './account/account.module';
 import { RouterModule } from '@angular/router';
 import { LayoutModule } from './layout/layout.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,
+   
     
   ],
   imports: [
@@ -30,7 +32,7 @@ import { LayoutModule } from './layout/layout.module';
     // CoreModule,
     // HomeModule,
     NgxSpinnerModule,
-    ReportOrderModule,
+    // ReportOrderModule,
     LayoutModule,
     AccountModule,
    RouterModule

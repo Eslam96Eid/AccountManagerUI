@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   constructor(private accountService: AccountService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+   
     this.returnUrl = this.activatedRoute.snapshot.queryParams.returnUrl || 
     '/reportorders';
     console.log(this.returnUrl);
@@ -31,7 +32,10 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.accountService.login(this.loginForm.value).subscribe(() => {
-      this.router.navigateByUrl(this.returnUrl);
+     
+       this.router.navigateByUrl(this.returnUrl); 
+       //this.router.navigate([this.returnUrl], { relativeTo:this.activatedRoute });
+      
       console.log(this.returnUrl)
     }, error => {
       console.log(error);

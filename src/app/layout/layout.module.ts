@@ -12,13 +12,21 @@ import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../shared/modules/material/material.module';
 import { ReportOrderComponent } from '../report-order/report-order.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from '../home/home/home.component';
+import { ReportOrderService } from '../report-order/report-order.service';
+import { NotificationMsgService } from '../report-order/notification-msg.service';
+import { AppRoutingModule } from '../app-routing.module';
+import { EditReportComponent } from '../Forms/edit-report/edit-report.component';
 
 
 
 @NgModule({
   declarations: [
-    LayoutComponent
-    
+    LayoutComponent,
+    HomeComponent,
+    ReportOrderComponent,
+    EditReportComponent
    
  
 
@@ -26,18 +34,20 @@ import { ReportOrderComponent } from '../report-order/report-order.component';
   imports: [
     CommonModule,
     NgxSpinnerModule,
+    AppRoutingModule,
    BrowserModule,
-  //  AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
      CoreModule,
-    ReportOrderModule,
     SharedModule,
     RouterModule,
-   ReportOrderModule,
-   MaterialModule
+   MaterialModule,
+   FormsModule,
+    ReactiveFormsModule,
+    
     
   ],
-  exports:[ReportOrderModule,ReportOrderComponent]
+  providers: [ReportOrderService,NotificationMsgService],
+  // exports:[ReportOrderModule,ReportOrderComponent]
 })
 export class LayoutModule { }

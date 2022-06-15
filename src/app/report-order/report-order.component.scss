@@ -1,0 +1,36 @@
+mat-cell, mat-header-cell{
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 9% !important;
+    width: 9% ;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    
+    word-break: break-word;
+    
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    
+    background-color: #fff;
+    }
+    mat-cell:nth-child(2), mat-header-cell:nth-child(2)
+    ,mat-cell:nth-child(3), mat-header-cell:nth-child(3)
+    {
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 12% !important;
+    width: 12% ;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    
+    word-break: break-word;
+    
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    // border-bottom:1px solid ;
+    background-color: #fff;
+    }
