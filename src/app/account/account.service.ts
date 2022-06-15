@@ -61,7 +61,7 @@ register(values: any) {
 
 logout() {
   localStorage.removeItem('token');
-  console.log("first commit")
+  console.log("second commit")
   this.currentUserSource.next(null);
   this.router.navigateByUrl('/');
 }
