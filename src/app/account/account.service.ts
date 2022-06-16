@@ -62,7 +62,7 @@ register(values: any) {
 logout() {
   localStorage.removeItem('token');
   this.currentUserSource.next(null);
-  this.router.navigateByUrl('/');
+  this.router.navigateByUrl('/login');
 }
 
 checkEmailExists(email: string) {

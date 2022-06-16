@@ -14,8 +14,9 @@ import { ReportOrderComponent } from './report-order/report-order.component';
 import { ReportOrderModule } from './report-order/report-order.module';
 
 import { AccountModule } from './account/account.module';
-import { RouterModule } from '@angular/router';
+import { RouterModule} from '@angular/router';
 import { LayoutModule } from './layout/layout.module';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 @NgModule({
@@ -42,7 +43,9 @@ import { LayoutModule } from './layout/layout.module';
   providers: [
     {provide:HTTP_INTERCEPTORS , useClass:ErrorInterceptor , multi:true},
     {provide:HTTP_INTERCEPTORS , useClass:LoadingInterceptor , multi:true},
-    {provide:HTTP_INTERCEPTORS , useClass:JwtInterceptor , multi:true}
+    {provide:HTTP_INTERCEPTORS , useClass:JwtInterceptor , multi:true},
+ 
+  
   ],
   bootstrap: [AppComponent]
 })

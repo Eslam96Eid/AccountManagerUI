@@ -2,14 +2,14 @@
      p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm fixed-top">
   <img src="/assets/images/logo.png" style="max-height: 70px;" alt="logo" class="logo" routerLink="/">
   <nav class="my-2 my-md-0 me-md-3 text-uppercase" style="font-size: larger;">
-    <a class="p-2" routerLink="./home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+    <a class="p-2" routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
     <span class="separator">|</span>
-    <a class="p-2" routerLink="./reportorders" routerLinkActive="active">Reports</a>
+    <a class="p-2" routerLink="/reportorders" routerLinkActive="active">Reports</a>
     <span class="separator">|</span>
     
-    <a class="p-2" routerLink="./shop" routerLinkActive="active">Schedule Reports</a>
+    <a class="p-2" routerLink="/shop" routerLinkActive="active">Schedule Reports</a>
     <span class="separator">|</span>
-    <a class="p-2" routerLink="./test-error" routerLinkActive="active">GFMIS</a>
+    <a class="p-2" routerLink="/test-error" routerLinkActive="active">GFMIS</a>
     <span class="separator">|</span>
     <a class="p-2" routerLink="/test-error" routerLinkActive="active">Conflict</a>
   </nav>
@@ -30,7 +30,7 @@
             <i class="fa fa-history mr-3"></i> View Logs
           </a>
           <div class="dropdown-divider"></div>
-          <a routerLink="/login" class="dropdown-item d-flex align-items-center py-2">
+          <a (click)="logout()" class="dropdown-item d-flex align-items-center py-2">
             <i class="fa fa-sign-out mr-3"></i> Logout
           </a>
         </div>

@@ -13,18 +13,19 @@ import { MaterialModule } from '../shared/modules/material/material.module';
 
 
 @NgModule({
-  declarations: [NavBarComponent, TestErrorComponent, NotFoundComponent, ServerErrorComponent, SectionHeaderComponent],
+  //declarations: [NavBarComponent, TestErrorComponent, NotFoundComponent, ServerErrorComponent, SectionHeaderComponent],
+  declarations:[],
   imports: [
     CommonModule,
-    RouterModule,
-    BreadcrumbModule,
-    MaterialModule,
-    SharedModule,
-    ToastrModule.forRoot({
-      positionClass: 'toast-bottom-right',
-      preventDuplicates: true
-    })
+    // RouterModule,
+    // BreadcrumbModule,
+    // MaterialModule,
+    // SharedModule,
+    // ToastrModule.forRoot({
+    //   positionClass: 'toast-bottom-right',
+    //   preventDuplicates: true
+    // })
   ],
-  exports: [NavBarComponent, SectionHeaderComponent]
+  //exports: [NavBarComponent, SectionHeaderComponent]
 })
 export class CoreModule { }

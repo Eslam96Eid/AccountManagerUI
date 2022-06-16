@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
     this.accountService.login(this.loginForm.value).subscribe(() => {
      
        this.router.navigateByUrl(this.returnUrl); 
-       //this.router.navigate([this.returnUrl], { relativeTo:this.activatedRoute });
+      // this.router.navigate([this.returnUrl], { relativeTo:this.activatedRoute });
       
       console.log(this.returnUrl)
     }, error => {

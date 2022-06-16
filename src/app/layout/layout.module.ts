@@ -18,15 +18,28 @@ import { ReportOrderService } from '../report-order/report-order.service';
 import { NotificationMsgService } from '../report-order/notification-msg.service';
 import { AppRoutingModule } from '../app-routing.module';
 import { EditReportComponent } from '../Forms/edit-report/edit-report.component';
+import { BreadcrumbModule } from 'xng-breadcrumb';
+import { NavBarComponent } from '../core/nav-bar/nav-bar.component';
+import { SectionHeaderComponent } from '../core/section-header/section-header.component';
+import { TestErrorComponent } from '../core/test-error/test-error.component';
+import { NotFoundComponent } from '../core/not-found/not-found.component';
+import { ServerErrorComponent } from '../core/server-error/server-error.component';
+import { ToastrModule } from 'ngx-toastr';
 
 
 
 @NgModule({
   declarations: [
     LayoutComponent,
+    NavBarComponent,
+    SectionHeaderComponent,
+     TestErrorComponent,
+      NotFoundComponent,
+     ServerErrorComponent, 
     HomeComponent,
     ReportOrderComponent,
-    EditReportComponent
+    EditReportComponent,
+   
    
  
 
@@ -37,13 +50,18 @@ import { EditReportComponent } from '../Forms/edit-report/edit-report.component'
     AppRoutingModule,
    BrowserModule,
     BrowserAnimationsModule,
+    BreadcrumbModule,
     HttpClientModule,
-     CoreModule,
+     //CoreModule,
     SharedModule,
     RouterModule,
    MaterialModule,
    FormsModule,
     ReactiveFormsModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true
+    })
     
     
   ],
