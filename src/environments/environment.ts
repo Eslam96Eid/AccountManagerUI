@@ -4,8 +4,8 @@
 import 'zone.js/plugins/zone-error'; 
 export const environment = {
   production: false,
-  apiUrl: 'http://172.29.29.8:6080/api/'
-  // apiUrl: 'https://localhost:44316/api/'
+  //apiUrl: 'http://172.29.29.8:6080/api/'
+   apiUrl: 'https://localhost:44316/api/'
   
 };
 

@@ -1,7 +1,7 @@
 export interface IReportOrder {
     id: number
-    creationDate: string
-    updateDate: string
+    creationDate: Date
+    updateDate: Date
     isDeleted: boolean
     createdBy: string
     updatedBy: string
@@ -11,8 +11,8 @@ export interface IReportOrder {
     branch: string
     ticketNumber: number
     reportType: string
-    periodFrom: string
-    periodTo: string
+    periodFrom: Date
+    periodTo: Date
     reportStatus: string
     reportUrl: string
     sendTo: string

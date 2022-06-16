@@ -16,6 +16,7 @@ import { ReportOrderModule } from './report-order/report-order.module';
 import { AccountModule } from './account/account.module';
 import { RouterModule } from '@angular/router';
 import { LayoutModule } from './layout/layout.module';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 
 @NgModule({
@@ -29,7 +30,7 @@ import { LayoutModule } from './layout/layout.module';
      AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    // CoreModule,
+    MatDatepickerModule,
     // HomeModule,
     NgxSpinnerModule,
     // ReportOrderModule,

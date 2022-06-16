@@ -1,16 +1,15 @@
-
- <mat-card class="example-card">
-    <form [formGroup]="form" class="normal-form" (submit)="onSubmit()">
+<mat-card class="example-card">
+  <form [formGroup]="form" class="normal-form" (submit)="onSubmit()">
     <mat-card-header>
-        <mat-card-title>
-            UPDATE QUEUES
-           <div class="" style="float: right;">
-               <span class="option submit" type="submit"><small>Submit</small></span> 
-               <span class="separator mx-1">|</span>
-               <span class="option text-danger"  (click)="onClose()"><small>Cancel</small></span>
-               
-            </div>
-        </mat-card-title>
+      <mat-card-title>
+        UPDATE QUEUES
+        <div class="" style="float: right;">
+          <span class="option submit" type="submit"><small>Submit</small></span>
+          <span class="separator mx-1">|</span>
+          <span class="option text-danger" (click)="onClose()"><small>Cancel</small></span>
+
+        </div>
+      </mat-card-title>
     </mat-card-header>
     <mat-divider></mat-divider>
 
@@ -20,95 +19,118 @@
         <span class="fill-remaining-space"></span>
         <button class="btn-dialog-close" mat-stroked-button  tabIndex="-1" (click)="onClose()"><mat-icon>clear</mat-icon></button>
       </mat-toolbar> -->
-      <mat-grid-list cols="1" rowHeight="90px">
-        <mat-grid-tile >
-          <div class="controles-container">
-            <input type="hidden" formControlName="$key">
-            <mat-form-field>
-              <mat-label>Report Type</mat-label>
-              <mat-select>
-                  <mat-option value="Please Select">Please Select</mat-option>
-                <mat-option value="Technical">Technical</mat-option>
-                <mat-option value="Conssesion">Conssesion</mat-option>
-                <mat-option value="RFO">RFO</mat-option>
-               
-              </mat-select>
-          
-            </mat-form-field> 
-            </div>
-            </mat-grid-tile>
-            </mat-grid-list>
-        <mat-grid-list cols="2" rowHeight="400px">
-          <mat-grid-tile >
-           
-              <div class="controles-container">
-              
-              <mat-form-field appearance="fill">
-                  <mat-label>Send to *</mat-label>
-                <input formControlName="SendTo" matInput>
-                <mat-hint align="start">For multiple email separate by ',' </mat-hint>
-                <mat-error>This field is mandatory.</mat-error> 
-              </mat-form-field>
-              <mat-form-field appearance="fill">
-                  <mat-label>CC</mat-label>
-                <input formControlName="cc" matInput>
-                <mat-hint align="start">For multiple CC separate by ',' </mat-hint>
-                <mat-error>This field is mandatory.</mat-error> 
-              </mat-form-field>
-             
-              <mat-form-field appearance="fill">
-                <mat-label>Customer Name</mat-label>
-                <mat-select>
-                    <mat-option value="Please Select">Please Select</mat-option>
-                  <mat-option value="Technical">Technical</mat-option>
-                  <mat-option value="Conssesion">Conssesion</mat-option>
-                  <mat-option value="RFO">RFO</mat-option>
-                 
-                </mat-select>
-            
-              </mat-form-field> 
-              <mat-form-field appearance="fill">
-                <mat-label>Account Number</mat-label>
-              <input formControlName="accountNumber" matInput>
-              <mat-error>This field is mandatory.</mat-error> 
-            </mat-form-field>
-            <button mat-raised-button class="mt-2" color="sucess">Find Customer</button> 
-            </div>
-          </mat-grid-tile>
-          <mat-grid-tile>
-            <div class="controles-container">
-                
-                <mat-form-field appearance="fill">
-                    <mat-label>Branch</mat-label>
-                    <mat-select>
-                        <mat-option value="Please Select">Please Select</mat-option>
-                      <mat-option value="Technical">Technical</mat-option>
-                      <mat-option value="Conssesion">Conssesion</mat-option>
-                      <mat-option value="RFO">RFO</mat-option>
-                     
-                    </mat-select>
-                
-                  </mat-form-field> 
-                <mat-form-field appearance="fill">
-                    <mat-label>Period From</mat-label>
-                  <input formControlName="periodfrom" matInput>
-                  <mat-error>This field is mandatory.</mat-error> 
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>period To</mat-label>
-                  <input formControlName="periodto" matInput>
-                  <mat-error>This field is mandatory.</mat-error> 
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>Attach Customer Mail</mat-label>
-                  <input formControlName="accountNumber" matInput>
-                  <mat-error>This field is mandatory.</mat-error> 
-                </mat-form-field>
-                <button mat-raised-button class="mt-2" color="warn">Order Report</button> 
-            </div>
-          </mat-grid-tile>
-          
-        </mat-grid-list>
-      </form>
-    
+    <mat-grid-list cols="1" rowHeight="90px">
+      <mat-grid-tile>
+        <div class="controles-container">
+          <!-- <input type="hidden" formControlName="$key"> -->
+          <mat-form-field>
+            <mat-label>Report Type</mat-label>
+            <mat-select (selectionChange)="OnChangePopName($event)">
+              <mat-option value="Please Select">Please Select</mat-option>
+              <mat-option value="Technical">Technical</mat-option>
+              <mat-option value="Conssesion">Conssesion</mat-option>
+              <mat-option value="RFO">RFO</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <mat-grid-list cols="2" rowHeight="400px">
+      <mat-grid-tile>
+
+        <div class="controles-container">
+          <input type="hidden" formControlName="id">
+          <mat-form-field appearance="fill">
+            <mat-label>Send to *</mat-label>
+            <input formControlName="SendTo" matInput>
+            <mat-hint align="start">For multiple email separate by ',' </mat-hint>
+            <mat-error>This field is mandatory.</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>CC</mat-label>
+            <input formControlName="cc" matInput>
+            <mat-hint align="start">For multiple CC separate by ',' </mat-hint>
+            <mat-error>This field is mandatory.</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" *ngIf="flag_RFO">
+            <mat-label>Ticket Number</mat-label>
+            <input formControlName="ticketNumber" matInput>
+            <mat-error>This field is mandatory.</mat-error>
+          </mat-form-field>
+
+          <div class="add-bottom-padding" *ngIf="flag_RFO">
+            <mat-radio-group formControlName="type">
+              <mat-radio-button value="1">Premium </mat-radio-button>
+              <mat-radio-button value="2">Normal </mat-radio-button>
+            </mat-radio-group>
+          </div>
+
+          <mat-form-field appearance="fill" *ngIf="!flag_RFO">
+            <mat-label>Customer Name</mat-label>
+            <mat-select (selectionChange)="OnChangeCustomerName($event)">
+              <mat-option value="Please Select">Please Select</mat-option>
+              <mat-option value="Technical">Technical</mat-option>
+              <mat-option value="Conssesion">Conssesion</mat-option>
+              <mat-option value="RFO">RFO</mat-option>
+
+            </mat-select>
+
+          </mat-form-field>
+          <mat-form-field appearance="fill" *ngIf="!flag_RFO">
+            <mat-label>Account Number</mat-label>
+            <input formControlName="accountNumber" matInput>
+            <mat-error>This field is mandatory.</mat-error>
+          </mat-form-field>
+          <button mat-raised-button class="mt-2" color="sucess" *ngIf="!flag_RFO">Find Customer</button>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="controles-container">
+
+          <mat-form-field appearance="fill" *ngIf="!flag_RFO">
+            <mat-label>Branch</mat-label>
+            <mat-select (selectionChange)="OnChangeBranchName($event)">
+              <mat-option value="Please Select">Please Select</mat-option>
+              <mat-option value="Technical">Technical</mat-option>
+              <mat-option value="Conssesion">Conssesion</mat-option>
+              <mat-option value="RFO">RFO</mat-option>
+
+            </mat-select>
+
+          </mat-form-field>
+          <mat-form-field appearance="fill" *ngIf="!flag_RFO">
+            <mat-label>Period From</mat-label>
+            <input formControlName="periodfrom" [matDatepicker]="picker" readonly matInput>
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matSuffix [for]="picker">
+                <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+              </mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            <mat-error>This field is mandatory.</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill" *ngIf="!flag_RFO">
+            <mat-label>period To</mat-label>
+            <input formControlName="periodto"[matDatepicker]="picker" readonly matInput>
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker">
+              <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error>This field is mandatory.</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Attach Customer Mail</mat-label>
+            <!-- <input type="file" formControlName="accountNumber" matInput> -->
+            <input formControlName="uploadFile" #fileInput id="uploadFile" name="uploadFile" multiple="multiple"
+              matInput />
+            <mat-error>This field is mandatory.</mat-error>
+          </mat-form-field>
+          <button mat-raised-button class="mt-2" color="warn">Order Report</button>
+        </div>
+      </mat-grid-tile>
+
+    </mat-grid-list>
+  </form>
+
 </mat-card>
