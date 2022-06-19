@@ -1,4 +1,5 @@
 import { Component,OnInit } from '@angular/core';
+import { BreadcrumbService } from 'xng-breadcrumb';
 import { AccountService } from './account/account.service';
 
 
@@ -11,7 +12,7 @@ export class AppComponent implements OnInit {
   
   // title = 'SkiNet';
 
-  constructor( private accountService: AccountService) { }
+  constructor( private accountService: AccountService,private breadcrumbService: BreadcrumbService) { }
 
   ngOnInit(): void {
     // this.loadCurrentUser();
