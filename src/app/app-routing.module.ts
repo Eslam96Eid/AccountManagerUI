@@ -28,6 +28,7 @@ const routes: Routes = [
         path: '',
         redirectTo: 'home',
         pathMatch: 'full',
+        
        
       },
      
@@ -40,7 +41,7 @@ const routes: Routes = [
       {
         path: 'reportorders',
         component: ReportOrderComponent,
-       // canActivate: [AuthGuard],
+        //canActivate: [AuthGuard],
         data: { breadcrumb: 'ReportOrder' }
       },
     // { path: 'not-found', component: NotFoundComponent, data: { breadcrumb: 'Not found' } },
@@ -58,7 +59,7 @@ const routes: Routes = [
 
 
     ]
-     , data: { breadcrumb: 'Home' }
+     , data: { breadcrumb:  'Home'}
   },
  
  
