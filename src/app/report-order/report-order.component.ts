@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IReportOrder } from '../shared/models/IProduct';
 import { ReportOrderParams } from '../shared/models/shopParams';
 import { ReportOrderService } from './report-order.service';
 import { MatTableDataSource } from '@angular/material/table';
@@ -42,8 +41,6 @@ export class ReportOrderComponent implements OnInit {
   }
   getReportOrders(pageNum: number, pageSize: number, search: string, sortColumn: string, sortDir: string) {
     this.reportOrderService.getReportOrder(pageNum, pageSize, search, sortColumn, sortDir).subscribe(response => {
-      debugger;
-      console.log(response);
       this.reportOrders = response.data;
       this.totalCount = response.count;
       this.reportOrders.length = response?.pagination.totalCount;

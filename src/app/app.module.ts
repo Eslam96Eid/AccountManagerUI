@@ -4,19 +4,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { CoreModule } from './core/core.module';
-import { HomeModule } from './home/home.module';
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
 import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
 import { NgxSpinnerModule } from "ngx-spinner";
-import { ReportOrderComponent } from './report-order/report-order.component';
-import { ReportOrderModule } from './report-order/report-order.module';
-
 import { AccountModule } from './account/account.module';
 import { RouterModule} from '@angular/router';
 import { LayoutModule } from './layout/layout.module';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 
 

@@ -65,24 +65,21 @@
               <mat-radio-button value="2">Normal </mat-radio-button>
             </mat-radio-group>
           </div>
-
           <mat-form-field appearance="fill" *ngIf="!flag_RFO">
             <mat-label>Customer Name</mat-label>
-            <mat-select (selectionChange)="OnChangeCustomerName($event)">
-              <mat-option value="Please Select">Please Select</mat-option>
-              <mat-option value="Technical">Technical</mat-option>
-              <mat-option value="Conssesion">Conssesion</mat-option>
-              <mat-option value="RFO">RFO</mat-option>
-
+            <mat-select placeholder="Customer Name*" formControlName="customerName" [(ngModel)]="accountName">
+              <ng-container *ngFor="let element of accountNames">
+                <mat-option [value]="element.accountNumber">{{element.accountName}}</mat-option>
+              </ng-container>
             </mat-select>
-
           </mat-form-field>
           <mat-form-field appearance="fill" *ngIf="!flag_RFO">
             <mat-label>Account Number</mat-label>
-            <input formControlName="accountNumber" matInput>
+            <input formControlName="accountNumber" matInput [(ngModel)]="accountNumber">
             <mat-error>This field is mandatory.</mat-error>
           </mat-form-field>
-          <button mat-raised-button class="mt-2" color="sucess" *ngIf="!flag_RFO">Find Customer</button>
+          <input type="button" mat-raised-button class="mt-2" color="sucess" *ngIf="!flag_RFO"
+            (click)="OnFindCustomer()" value="Find Customer">
         </div>
       </mat-grid-tile>
       <mat-grid-tile>
@@ -102,16 +99,16 @@
           <mat-form-field appearance="fill" *ngIf="!flag_RFO">
             <mat-label>Period From</mat-label>
             <input formControlName="periodfrom" [matDatepicker]="picker" readonly matInput>
-              <mat-hint>MM/DD/YYYY</mat-hint>
-              <mat-datepicker-toggle matSuffix [for]="picker">
-                <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
-              </mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker">
+              <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
             <mat-error>This field is mandatory.</mat-error>
           </mat-form-field>
           <mat-form-field appearance="fill" *ngIf="!flag_RFO">
             <mat-label>period To</mat-label>
-            <input formControlName="periodto"[matDatepicker]="picker" readonly matInput>
+            <input formControlName="periodto" [matDatepicker]="picker" readonly matInput>
             <mat-hint>MM/DD/YYYY</mat-hint>
             <mat-datepicker-toggle matSuffix [for]="picker">
               <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>

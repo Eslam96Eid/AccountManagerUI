@@ -32,7 +32,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import { MatBadgeModule}from '@angular/material/badge';
 import {MatChipsModule} from '@angular/material/chips'
-
+import {MatSelectInfiniteScrollModule} from 'ng-mat-select-infinite-scroll';
 
 @NgModule({
   declarations: [],
@@ -70,7 +70,8 @@ import {MatChipsModule} from '@angular/material/chips'
    MatBottomSheetModule,
    MatBadgeModule,
    MatListModule,
-   MatChipsModule
+   MatChipsModule,
+   MatSelectInfiniteScrollModule
   ],
   exports: [
     MatSidenavModule,
@@ -88,6 +89,7 @@ import {MatChipsModule} from '@angular/material/chips'
    MatFormFieldModule,
    MatInputModule,
    MatSelectModule,
+  MatSelectInfiniteScrollModule,
    MatCheckboxModule,
    MatDatepickerModule,
    MatNativeDateModule,
