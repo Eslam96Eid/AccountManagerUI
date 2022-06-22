@@ -18,7 +18,7 @@ export class ReportOrderComponent implements OnInit {
   searchKey:string ='' ;
   @ViewChild(MatSort) sort?: MatSort;
   @ViewChild(MatPaginator) paginator?: MatPaginator;
-  displayedColumns: string[] = ['id', 'orderedBy', 'customerName', 'accountNumber' , 'branch' ,'ticketNumber','reportType', 'periodFrom' , 'periodTo' ,'reportStatus','sendTo','ccTo', 'createdAt' , 'reportClass','report','customReport'];
+  displayedColumns: string[] = [ 'orderedBy', 'id','customerName', 'accountNumber' , 'branch' ,'ticketNumber','reportType', 'periodFrom' , 'periodTo' ,'reportStatus','sendTo','ccTo', 'createdAt' , 'reportClass','report','customReport'];
   dataSource = new MatTableDataSource<any>();
 
   sortColumnDef: string = "Id";
@@ -135,7 +135,9 @@ export class ReportOrderComponent implements OnInit {
     dialogGonfig.width="50%";
     dialogGonfig.panelClass='modals-dialog';
   
-    this._bottomSheet.open(EditReportComponent);
+    this._bottomSheet.open(EditReportComponent,{
+      disableClose: true
+    });
   
   }
 }

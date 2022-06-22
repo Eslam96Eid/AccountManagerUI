@@ -2,3 +2,17 @@
     padding: 0 !important;
     margin: 0 !important;
 }
+.ticketType{
+    top: -10px;
+    position: relative;
+    padding-bottom: 1.34375em;
+}
+mat-radio-button{
+    padding: 0 25px;
+}
+
+#example-radio-group-label
+{
+    font-weight: 500 !important;
+    font-size: 14px;
+}

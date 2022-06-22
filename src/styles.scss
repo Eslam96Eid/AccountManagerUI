@@ -122,7 +122,18 @@ button,
     background-color:#cad1d3 !important;
 }
 .mat-form-field-ripple {
-  background-color:  rgb(196 196 162) !important;
+  background-color:  var(--secondary-color) !important;
+}
+
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle{
+    border-color:var(--main-color) !important;
+}
+.mat-radio-button.mat-accent .mat-radio-inner-circle, 
+.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
+ .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple, 
+.mat-radio-button.mat-accent:active .mat-radio-persistent-ripple{
+    background-color:var(--main-color) !important;
 }
 .search-form-field div.mat-form-field-underline{
     display: none;
@@ -136,6 +147,9 @@ button,
 .search-form-field div.mat-form-field-suffix button{
    width:32px;
    height: 32px;
+ }
+ .mat-form-field-appearance-fill .mat-form-field-flex{
+    background-color: rgb(249 249 249) !important;
  }
   [matInput]{
      background-color: transparent;
@@ -187,6 +201,9 @@ th {
 th.mat-sort-header-sorted {
     color: black;
 }
+.submit:hover{
+    cursor: pointer;
+}
 
 mat-cell,
 mat-header-cell,
@@ -203,10 +220,17 @@ mat-footer-cell {
     -moz-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto;
-    border-bottom: 1px solid #d3cead;
+    border-bottom: 1px solid #dedede;
 
 }
-
+.mat-header-cell{
+    color: var(--main-color) !important;
+    text-transform: capitalize;
+   
+}
+mat-cell, mat-header-cell, mat-footer-cell{
+    overflow: visible !important;
+}
 
 
 mat-row,
@@ -263,6 +287,40 @@ td.mat-footer-cell {
     float: right !important;
    
   }
+
+  .mat-paginator-container{
+    justify-content: normal !important;
+  }
+
+  .mat-paginator-range-actions{
+    position: absolute;
+    right: 20px;
+  }
+
+
+
+  .mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
+    background: rgb(0 0 0 / 3%) !important;
+}
+  .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+    color: #7b5b1c !important;
+    
+    
+}
+/* responsive table*/
+
+@media only screen and (max-width: 992px) {
+    mat-cell, mat-header-cell, mat-footer-cell {
+       
+        white-space: nowrap !important;
+        overflow-wrap: normal !important;
+        word-wrap:normal !important;
+        word-break: normal !important;
+    }
+
+    
+}
+
 /*scroll*/
 
 /* width */

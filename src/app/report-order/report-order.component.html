@@ -18,15 +18,13 @@
             matSortActive="customerName" matSortDirection="asc" matSortDisableClear>
 
 
+            <ng-container matColumnDef="orderedBy">
+                <mat-header-cell *matHeaderCellDef mat-sort-header><b>Ordered By</b> </mat-header-cell>
+                <mat-cell *matCellDef="let element" data-label="orderedBy"> {{element.orderedBy}} </mat-cell>
+            </ng-container>
             <ng-container matColumnDef="id">
                 <mat-header-cell *matHeaderCellDef mat-sort-header hidden>ID</mat-header-cell>
-                <mat-cell *matCellDef="let element" data-label="id"> {{element.id}} </mat-cell>
-            </ng-container>
-
-
-            <ng-container matColumnDef="orderedBy">
-                <mat-header-cell *matHeaderCellDef mat-sort-header><b>OrderedBy</b> </mat-header-cell>
-                <mat-cell *matCellDef="let element" data-label="orderedBy"> {{element.orderedBy}} </mat-cell>
+                <mat-cell *matCellDef="let element" data-label="id" hidden> {{element.id}} </mat-cell>
             </ng-container>
 
 
@@ -36,7 +34,7 @@
             </ng-container>
 
             <ng-container matColumnDef="accountNumber">
-                <mat-header-cell *matHeaderCellDef mat-sort-header><b>AccountNumber</b></mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header><b>Account Number</b></mat-header-cell>
                 <mat-cell *matCellDef="let element" data-label="accountNumber"> {{element.accountNumber}}
                 </mat-cell>
             </ng-container>
@@ -48,13 +46,13 @@
             </ng-container>
 
             <ng-container matColumnDef="ticketNumber">
-                <mat-header-cell *matHeaderCellDef mat-sort-header><b>ticketNumber</b> </mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header><b>ticket Number</b> </mat-header-cell>
                 <mat-cell *matCellDef="let element" data-label="ticketNumber"> {{element.ticketNumber}}
                 </mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="reportType">
-                <mat-header-cell *matHeaderCellDef mat-sort-header><b>reportType</b> </mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header><b>report Type</b> </mat-header-cell>
                 <mat-cell *matCellDef="let element" data-label="reportType"> {{element.reportType}}
                 </mat-cell>
             </ng-container>
@@ -81,13 +79,13 @@
             </ng-container>
 
             <ng-container matColumnDef="reportStatus">
-                <mat-header-cell *matHeaderCellDef mat-sort-header><b>reportStatus</b> </mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header><b>report Status</b> </mat-header-cell>
                 <mat-cell *matCellDef="let element" data-label="reportStatus"> {{element.reportStatus}}
                 </mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="sendTo">
-                <mat-header-cell *matHeaderCellDef mat-sort-header><b>SendTo</b> </mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header><b>Send To</b> </mat-header-cell>
                 <mat-cell *matCellDef="let element" data-label="sendTo"> {{element.sendTo}}
                 </mat-cell>
             </ng-container>
@@ -100,7 +98,7 @@
             </ng-container>
 
             <ng-container matColumnDef="createdAt">
-                <mat-header-cell *matHeaderCellDef mat-sort-header><b>RequestedTime</b> </mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header><b>Requested Time</b> </mat-header-cell>
                 <mat-cell *matCellDef="let element" data-label="createdAt"> {{element.createdAt}}
                 </mat-cell>
             </ng-container>
@@ -116,24 +114,24 @@
                 <mat-header-cell *matHeaderCellDef mat-sort-header><b>Report</b> </mat-header-cell>
                 <mat-cell *matCellDef="let element" data-label="report">
                     <ng-container>
-                        <button mat-button class="text-success font-weight-bolder">
-                            View Report
+                        <button mat-button class="text-warning">
+                          <mat-icon>visibility</mat-icon>  View Report
                         </button>
                     </ng-container>
                 </mat-cell>
             </ng-container>
             <ng-container matColumnDef="customReport">
-                <mat-header-cell mat-header-cell *matHeaderCellDef><b>CustomReport</b> </mat-header-cell>
+                <mat-header-cell mat-header-cell *matHeaderCellDef><b>Custom Report</b> </mat-header-cell>
                 <mat-cell *matCellDef="let row" data-label="customReport">
 
 
                     <ng-container>
-                        <button mat-button class="text-success font-weight-bolder">
-                            Attach
+                        <button mat-button class="text-info font-weight-bolder">
+                          Attach
                         </button>
-                        <span class="mx-2">|</span>
-                        <button mat-button class="font-weight-bolder" color="warn">
-                            Send
+                        <span class="mx-1">|</span>
+                        <button mat-button class="font-weight-bolder" color="accent">
+                             Send
                         </button>
                     </ng-container>
 
