@@ -63,5 +63,9 @@ export class ReportOrderService {
     return this.http.get<any>(this.baseUrl + 'Home/GetAccountNameByAccNumber/' + accountNumber);
   }
 
+  getAccountBranches(accountName : string): Observable<any> {
+    return this.http.get<any>(this.baseUrl + 'Home/GetAccountBranch/' + accountName);
+  }
+
 
 }

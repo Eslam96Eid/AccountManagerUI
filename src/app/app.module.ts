@@ -12,6 +12,7 @@ import { AccountModule } from './account/account.module';
 import { RouterModule} from '@angular/router';
 import { LayoutModule } from './layout/layout.module';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 
 @NgModule({
@@ -31,8 +32,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     // ReportOrderModule,
     LayoutModule,
     AccountModule,
-   RouterModule
-  
+   RouterModule,
+   ScrollingModule 
     
   ],
   providers: [
