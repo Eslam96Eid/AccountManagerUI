@@ -9,6 +9,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { filter, scan } from 'rxjs/operators';
 import { ReportOrderService } from 'src/app/report-order/report-order.service';
 import { IAccount } from 'src/app/shared/models/accounts';
+import { IBranch } from 'src/app/shared/models/branch';
 import { IReportOrder } from 'src/app/shared/models/IProduct';
 
 
@@ -26,16 +27,25 @@ export class EditReportComponent implements OnInit {
   customerName: string;
   branchName: string;
   accountNames: IAccount[] = [];
-  _accountNames: any[] = [];
+  branches:IBranch
+
+
+  viewaccountNames : IAccount[] = []; 
+  private readonly RELOAD_TOP_SCROLL_POSITION = 100;
+  @ViewChild('accountNameSelect') selectElem : MatSelect ;
+_startIndex = 0;
+_endIdex = 10;
 
 
 
   constructor(private cd: ChangeDetectorRef, readonly sd: ScrollDispatcher, private toastr: ToastrService, private reportOrderService: ReportOrderService, private _bottomSheetRef: MatBottomSheetRef<EditReportComponent>) {
- 
-  }
-
-  ngOnInit(): void {
     this.LoadAccountName();
+  }
+  ngAfterViewInit() {
+    this.selectElem.openedChange.subscribe(() => this.registerPanelScrollEvent());
+  }
+  ngOnInit(): void {
+  
   }
 
   form: FormGroup = new FormGroup({
@@ -109,14 +119,38 @@ export class EditReportComponent implements OnInit {
   LoadAccountName() {
     this.reportOrderService.getAccounts().subscribe(res => {
       this.accountNames = res.data;
+      this.viewaccountNames= this.accountNames.slice(this._startIndex,this._endIdex);
     });
+
   }
 
   OnFindCustomer() {
-    debugger;
     this.reportOrderService.getAccountNameByNumber(this.accountNumber).subscribe(res => {
+      this.viewaccountNames.push( res.data[0])
       this.accountName = res.data[0].accountNumber;
+     this.reportOrderService.getAccountBranches(res.data[0].accountName).subscribe(response =>{
+      console.log(response.data);
+      this.branches = response.data;
+     })
     })
+  }
+
+  
+
+  registerPanelScrollEvent() {
+    let panel = this.selectElem.panel.nativeElement;
+     panel.addEventListener('scroll', event => this.loadAllOnScroll(event));
+  }
+
+  loadAllOnScroll(event) {
+    debugger;
+    if (event.target.scrollTop > this.RELOAD_TOP_SCROLL_POSITION) {
+      this.viewaccountNames  = [...this.viewaccountNames, ...this.accountNames.slice(this._startIndex + 10 ,this._endIdex + 10 )];
+    }
+  }
+
+  reset() {
+    this.viewaccountNames = this.accountNames.slice(0, 10);
   }
 
 }

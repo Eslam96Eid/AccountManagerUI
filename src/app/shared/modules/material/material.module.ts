@@ -34,7 +34,6 @@ import { MatBadgeModule}from '@angular/material/badge';
 import {MatChipsModule} from '@angular/material/chips'
 import { MatSelectInfiniteScrollModule } from 'ng-mat-select-infinite-scroll';
 
-
 @NgModule({
   declarations: [],
   imports: [
@@ -73,6 +72,7 @@ import { MatSelectInfiniteScrollModule } from 'ng-mat-select-infinite-scroll';
    MatListModule,
    MatChipsModule,
    MatSelectInfiniteScrollModule
+   
   ],
   exports: [
     MatSidenavModule,
@@ -90,7 +90,6 @@ import { MatSelectInfiniteScrollModule } from 'ng-mat-select-infinite-scroll';
    MatFormFieldModule,
    MatInputModule,
    MatSelectModule,
-  MatSelectInfiniteScrollModule,
    MatCheckboxModule,
    MatDatepickerModule,
    MatNativeDateModule,
@@ -110,7 +109,6 @@ import { MatSelectInfiniteScrollModule } from 'ng-mat-select-infinite-scroll';
    MatListModule,
    MatChipsModule,
    MatSelectInfiniteScrollModule
-
   ]
 })
 export class MaterialModule { }

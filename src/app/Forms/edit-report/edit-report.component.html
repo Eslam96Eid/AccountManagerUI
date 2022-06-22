@@ -59,12 +59,13 @@
 
           <mat-form-field appearance="fill" *ngIf="!flag_RFO">
             <mat-label>Customer Name</mat-label>
-            <mat-select placeholder="Customer Name*" formControlName="customerName" [(ngModel)]="accountName">
-              <ng-container *ngFor="let element of accountNames">
+            <mat-select placeholder="Customer Name*" formControlName="customerName" [(ngModel)]="accountName" #accountNameSelect (onClose)="reset()">
+              <ng-container *ngFor="let element of viewaccountNames;let i = index">
                 <mat-option [value]="element.accountNumber">{{element.accountName}}</mat-option>
               </ng-container>
             </mat-select>
           </mat-form-field>
+          
           <mat-form-field appearance="fill" *ngIf="!flag_RFO">
             <mat-label>Account Number</mat-label>
             <input formControlName="accountNumber" matInput [(ngModel)]="accountNumber">
@@ -76,17 +77,13 @@
       </mat-grid-tile>
       <mat-grid-tile>
         <div class="controles-container">
-
           <mat-form-field appearance="fill" *ngIf="!flag_RFO">
             <mat-label>Branch</mat-label>
-            <mat-select (selectionChange)="OnChangeBranchName($event)">
-              <mat-option value="Please Select">Please Select</mat-option>
-              <mat-option value="Technical">Technical</mat-option>
-              <mat-option value="Conssesion">Conssesion</mat-option>
-              <mat-option value="RFO">RFO</mat-option>
-
+            <mat-select placeholder="Branch*" formControlName="branch" >
+              <ng-container *ngFor="let element of branches">
+                <mat-option [value]="element.node_ID">{{element.profileName}}</mat-option>
+              </ng-container>
             </mat-select>
-
           </mat-form-field>
           <mat-form-field appearance="fill" *ngIf="!flag_RFO">
             <mat-label>Period From</mat-label>
