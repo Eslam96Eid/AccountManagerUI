@@ -1,6 +1,6 @@
 import { CdkVirtualScrollViewport, ScrollDispatcher } from '@angular/cdk/scrolling';
 import { ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { MatOption } from '@angular/material/core';
 import { MatSelect } from '@angular/material/select';
@@ -52,10 +52,11 @@ _endIdex = 10;
     return this.form.controls[controlName].hasError(errorName);
   }
 
+
   emailPattern= "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
   form: FormGroup = new FormGroup({
     id: new FormControl(this.id),
-    SendTo: new FormControl('', [Validators.required, Validators.email]),
+    SendTo: new FormControl('', [Validators.required]),
     cc: new FormControl('', [Validators.required, Validators.email]),
     type: new FormControl(''),
     accountNumber: new FormControl(''),
