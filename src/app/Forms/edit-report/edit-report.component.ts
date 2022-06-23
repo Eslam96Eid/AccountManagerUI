@@ -45,13 +45,18 @@ _endIdex = 10;
     this.selectElem.openedChange.subscribe(() => this.registerPanelScrollEvent());
   }
   ngOnInit(): void {
+
   
   }
+  public hasError = (controlName: string, errorName: string) =>{
+    return this.form.controls[controlName].hasError(errorName);
+  }
 
+  emailPattern= "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
   form: FormGroup = new FormGroup({
     id: new FormControl(this.id),
-    SendTo: new FormControl(''),
-    cc: new FormControl(''),
+    SendTo: new FormControl('', [Validators.required, Validators.email]),
+    cc: new FormControl('', [Validators.required, Validators.email]),
     type: new FormControl(''),
     accountNumber: new FormControl(''),
     periodfrom: new FormControl(''),
@@ -61,8 +66,10 @@ _endIdex = 10;
     customerName: new FormControl('')
 
   });
-  onSubmit() {
 
+ 
+  onSubmit() {
+    
     if (this.form.valid) {
       this.reportOrder.id = this.form.value.id;
       this.reportOrder.sendTo = this.form.value.SendTo;

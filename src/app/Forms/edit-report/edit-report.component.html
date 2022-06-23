@@ -39,21 +39,26 @@
           <input type="hidden" formControlName="id">
           <mat-form-field appearance="fill">
             <mat-label>Send to *</mat-label>
-            <input formControlName="SendTo" matInput>
+            <input formControlName="SendTo" name="sendTo"  matInput>
+            
             <mat-hint align="start">For multiple email separate by ',' </mat-hint>
-            <mat-error>This field is mandatory.</mat-error>
+            <!-- <mat-error *ngIf="hasError('SendTo', 'required)"> This Field is mandatory </mat-error> -->
+            <mat-error *ngIf="hasError('SendTo', 'email')"> Please write a valid Email </mat-error>
+            <mat-error>This field is mandatory.</mat-error> 
           </mat-form-field>
           <mat-form-field appearance="fill">
             <mat-label>CC</mat-label>
             <input formControlName="cc" matInput>
             <mat-hint align="start">For multiple CC separate by ',' </mat-hint>
-            <mat-error>This field is mandatory.</mat-error>
+            <mat-error *ngIf="hasError('cc', 'email')"> Please write a valid Email </mat-error>
+            <mat-error>This field is mandatory.</mat-error> 
           </mat-form-field>
 
           <mat-form-field appearance="fill" *ngIf="flag_RFO">
             <mat-label>Ticket Number</mat-label>
             <input formControlName="ticketNumber" matInput>
-            <mat-error>This field is mandatory.</mat-error>
+            <!-- <mat-error *ngIf="hasError('ticketNumber', 'required)"> This Field is mandatory </mat-error> -->
+             <mat-error>This field is mandatory.</mat-error> 
           </mat-form-field>
 
 
@@ -69,7 +74,8 @@
           <mat-form-field appearance="fill" *ngIf="!flag_RFO">
             <mat-label>Account Number</mat-label>
             <input formControlName="accountNumber" matInput [(ngModel)]="accountNumber">
-            <mat-error>This field is mandatory.</mat-error>
+            <!-- <mat-error *ngIf="hasError('accountNumber', 'required)"> This Field is mandatory </mat-error> -->
+              <mat-error>This field is mandatory.</mat-error>  
           </mat-form-field>
           <input type="button" class="mt-2 mat-raised-button " *ngIf="!flag_RFO" (click)="OnFindCustomer()"
             value="Find Customer">
@@ -87,23 +93,28 @@
           </mat-form-field>
           <mat-form-field appearance="fill" *ngIf="!flag_RFO">
             <mat-label>Period From</mat-label>
-            <input formControlName="periodfrom" [matDatepicker]="picker" readonly matInput>
+            <input matInput formControlName="periodfrom" [matDatepicker]="picker" >
             <mat-hint>MM/DD/YYYY</mat-hint>
             <mat-datepicker-toggle matSuffix [for]="picker">
               <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
             </mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
-            <mat-error>This field is mandatory.</mat-error>
+             
+             <!-- <mat-error>This field is mandatory.</mat-error>  -->
           </mat-form-field>
+          
           <mat-form-field appearance="fill" *ngIf="!flag_RFO">
             <mat-label>period To</mat-label>
-            <input formControlName="periodto" [matDatepicker]="picker" readonly matInput>
+            <input matInput formControlName="periodto"  [matDatepicker]="picker" [min]="form.controls.periodfrom?.value"  >
+
             <mat-hint>MM/DD/YYYY</mat-hint>
             <mat-datepicker-toggle matSuffix [for]="picker">
               <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
             </mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
-            <mat-error>This field is mandatory.</mat-error>
+            <!-- <mat-error *ngIf="hasError('periodto', 'required)"> This Field is mandatory </mat-error> -->
+          
+             <mat-error>This field is mandatory.</mat-error>  
           </mat-form-field>
 
 
@@ -119,7 +130,8 @@
             <!-- <input type="file" formControlName="accountNumber" matInput> -->
             <input formControlName="uploadFile" #fileInput id="uploadFile" name="uploadFile" multiple="multiple"
               matInput />
-            <mat-error>This field is mandatory.</mat-error>
+              <!-- <mat-error *ngIf="hasError('uploadFile', 'required)"> This Field is mandatory </mat-error> -->
+             <mat-error>This field is mandatory.</mat-error> 
           </mat-form-field>
           <button mat-raised-button class="mt-2" color="warn">Order Report</button>
         </div>
