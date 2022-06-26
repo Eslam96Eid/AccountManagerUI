@@ -51,14 +51,12 @@ _endIdex = 10;
   public hasError = (controlName: string, errorName: string) =>{
     return this.form.controls[controlName].hasError(errorName);
   }
-  // PaternE="([\w+-.%]+@[\w-.]+\.[A-Za-z]{2,4},?))]";
-  // PaternE="[a-zA-Z0-9_.+-,;]+@(?:(?:[a-zA-Z0-9-]+\.,;)?[a-zA-Z]+\.,;)?(gmail)\.com";
-// PaternE="^(|([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5}){1,25})+([;.](([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5}){1,25})+)*$";
-   emailPattern= "(([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)(\s*,\\s*|\\s*$))*";
+
+  emailPattern= "(([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)(\s*,\\s*|\\s*$))*";
   form: FormGroup = new FormGroup({
     id: new FormControl(this.id),
     SendTo: new FormControl('', [Validators.required,Validators.pattern(this.emailPattern)]),
-    cc: new FormControl('', [Validators.required, Validators.email]),
+    cc: new FormControl('', [Validators.required,Validators.pattern(this.emailPattern)]),
     type: new FormControl(''),
     accountNumber: new FormControl(''),
     periodfrom: new FormControl(''),
