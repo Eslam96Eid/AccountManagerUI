@@ -43,7 +43,7 @@
             
             <mat-hint align="start">For multiple email separate by ',' </mat-hint>
             <!-- <mat-error *ngIf="hasError('SendTo', 'required)"> This Field is mandatory </mat-error> -->
-            <mat-error *ngIf="hasError('SendTo', 'email')"> Please write a valid Email </mat-error>
+            <mat-error *ngIf="hasError('SendTo', 'pattern')"> Please write a valid Email </mat-error>
             <mat-error>This field is mandatory.</mat-error> 
           </mat-form-field>
           <mat-form-field appearance="fill">
