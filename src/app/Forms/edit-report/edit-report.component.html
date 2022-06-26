@@ -50,8 +50,8 @@
             <mat-label>CC</mat-label>
             <input formControlName="cc" matInput>
             <mat-hint align="start">For multiple CC separate by ',' </mat-hint>
-            <mat-error *ngIf="hasError('cc', 'email')"> Please write a valid Email </mat-error>
-            <mat-error>This field is mandatory.</mat-error> 
+            <mat-error *ngIf="hasError('cc', 'pattern')"> Please write a valid Email </mat-error>
+            <!-- <mat-error>This field is mandatory.</mat-error>  -->
           </mat-form-field>
 
           <mat-form-field appearance="fill" *ngIf="flag_RFO">

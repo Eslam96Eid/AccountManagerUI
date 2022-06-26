@@ -56,7 +56,7 @@ _endIdex = 10;
   form: FormGroup = new FormGroup({
     id: new FormControl(this.id),
     SendTo: new FormControl('', [Validators.required,Validators.pattern(this.emailPattern)]),
-    cc: new FormControl('', [Validators.required,Validators.pattern(this.emailPattern)]),
+    cc: new FormControl('', [Validators.pattern(this.emailPattern)]),
     type: new FormControl(''),
     accountNumber: new FormControl(''),
     periodfrom: new FormControl(''),
