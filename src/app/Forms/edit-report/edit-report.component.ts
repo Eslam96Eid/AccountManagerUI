@@ -67,7 +67,10 @@ _endIdex = 10;
 
   });
 
- 
+  selectedFiles:any;
+  selectFile(event) {
+    this.selectedFiles = event.target.files;
+}
   onSubmit() {
     
     if (this.form.valid) {
@@ -132,10 +135,15 @@ _endIdex = 10;
   }
 
   OnFindCustomer() {
+    debugger
+    console.log(this.accountNumber)
     this.reportOrderService.getAccountNameByNumber(this.accountNumber).subscribe(res => {
+      debugger
+      console.log(res);
       this.viewaccountNames.push( res.data[0])
       this.accountName = res.data[0].accountNumber;
      this.reportOrderService.getAccountBranches(res.data[0].accountName).subscribe(response =>{
+      debugger
       console.log(response.data);
       this.branches = response.data;
      })

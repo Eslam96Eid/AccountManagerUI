@@ -126,12 +126,21 @@
             </mat-radio-group>
           </div>
           <mat-form-field appearance="fill">
-            <mat-label>Attach Customer Mail</mat-label>
-            <!-- <input type="file" formControlName="accountNumber" matInput> -->
+            <!-- <mat-label>Attach Customer Mail</mat-label>
             <input formControlName="uploadFile" #fileInput id="uploadFile" name="uploadFile" multiple="multiple"
               matInput />
-              <!-- <mat-error *ngIf="hasError('uploadFile', 'required)"> This Field is mandatory </mat-error> -->
-             <mat-error>This field is mandatory.</mat-error> 
+             <mat-error>This field is mandatory.</mat-error>  -->
+              <mat-form-field class="columns">
+                <mat-label *ngIf="selectedFiles; else newFile">{{selectedFiles.item(0).name}}</mat-label>
+                <ng-template #newFile>
+                    <mat-label>Attach Customer Mail</mat-label>
+                </ng-template>
+                <input matInput disabled>
+                <button mat-icon-button matSuffix (click)="fileInput.click()">
+                    <mat-icon>attach_file</mat-icon>
+                </button>
+                <input formControlName="uploadFile" hidden (change)="selectFile($event)" #fileInput type="file" id="file">
+              </mat-form-field>
           </mat-form-field>
           <button mat-raised-button class="mt-2" color="warn">Order Report</button>
         </div>
